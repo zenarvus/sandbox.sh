@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Exec=env BWRAP_EXTRA="--bind /mnt/secure/data/gallery /home/user/gallery --bind /mnt/secure/data/personal/configs/laptop/home/user/.config/qutebrowser /home/user/.config/qutebrowser" /mnt/secure/sandbox/sandbox.sh exec alpine surf qutebrowser
+Terminal=false
+Name=Qutebrowser

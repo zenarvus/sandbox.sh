@@ -1,0 +1,3 @@
+- installing xdg-desktop-portal inside the sandbox causes stremio to hang because i do not bing things required for xdg-desktop-portal properly. Like /dev/fuse.
+- steam requires binding system bus
+- nested xdg-dbus-proxy causes issues: https://github.com/flatpak/xdg-dbus-proxy/issues/67. When it gets fixed, we will use proxied host buses instead of creating an isolated one via xdg-dbus-proxy.

@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Exec=/mnt/secure/sandbox/sandbox.sh exec alpine fun dbus-run-session flatpak run com.stremio.Stremio --no-window-decorations
+Terminal=false
+Name=Stremio

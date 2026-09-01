@@ -1,0 +1,41 @@
+# Essentials
+dbus
+mesa
+mesa-utils
+wayland-utils
+vulkan-loader
+vulkan-tools
+
+# Languages
+go
+rust
+zig
+python3
+npm
+
+# Clipboard
+wl-clipboard
+
+# Fonts
+font-dejavu
+font-noto
+font-noto-cjk
+
+# Core utils
+curl
+git
+
+# Common apps
+ffmpeg
+imagemagick
+
+# Other
+yazi
+fzf
+ripgrep
+7zip
+flatpak
+zenity
+gtk3
+gtk4
+gsettings-desktop-schemas

@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Exec=env BWRAP_EXTRA="--bind /mnt/secure/games /home/user/games" /mnt/secure/sandbox/sandbox.sh exec alpine fun dbus-run-session flatpak run net.lutris.Lutris
+Terminal=false
+Name=Lutris
