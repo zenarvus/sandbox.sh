@@ -1,4 +1,13 @@
-Simple package sandboxing solution using bubblewrap
+A simple, host-integrated, file-system-isolated bubblewrap sandbox environment.
+
+Consider using it when:
+- You do not want apps to mess with the host file-system
+- You do not want apps to see your confidential files
+- You want to install apps in a specific place you want
+
+It does not provide a completely isolated sandbox, but I suppose provides enough sandboxing to run apps you partially trust. Still, do not try to install an obvious malware in it.
+
+- TODO: Use seccomp filters
 
 ********
 

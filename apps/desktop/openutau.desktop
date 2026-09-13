@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Exec=env BWRAP_EXTRA="--bind /mnt/secure/data/gallery /home/user/gallery --bind /mnt/secure/data/personal/projects /home/user/projects" /mnt/secure/sandbox/sandbox.sh exec alpine media /home/user/openutau/OpenUtau
+Terminal=false
+Name=OpenUtau

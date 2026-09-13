@@ -43,8 +43,11 @@ PULSE_SOCKET="$XDG_RUNTIME_DIR/pulse/native"
 PIPEWIRE_SOCKET="$XDG_RUNTIME_DIR/pipewire-0"
 
 #### BWRAP SETTINGS #################################
-BWRAP_BASIC="--die-with-parent --unshare-pid --unshare-user --uid 1000 --gid 1000 --new-session"
 
+# Isolate the bubblewrap sandbox
+BWRAP_BASIC="--die-with-parent --unshare-all --share-net --uid 1000 --gid 1000"
+
+# Share GPU devices and /sys and create base folders required for the sandbox.
 BWRAP_PLUS="--dev /dev \
 --dev-bind /dev/dri /dev/dri \
 \
@@ -53,6 +56,8 @@ BWRAP_PLUS="--dev /dev \
 --tmpfs /tmp \
 --tmpfs /run"
 
+# Create a sandbox runtime dir and bind pulse, pipewire and wayland sockets to it.
+# Also set necessary environment variables GUI apps
 BWRAP_BUS="--dir "$SANDBOX_RUNTIME_DIR" \
 --ro-bind "$PULSE_SOCKET" "$SANDBOX_RUNTIME_DIR/pulse/native" \
 --ro-bind "$PIPEWIRE_SOCKET" "$SANDBOX_RUNTIME_DIR/pipewire-0" \
@@ -62,12 +67,14 @@ BWRAP_BUS="--dir "$SANDBOX_RUNTIME_DIR" \
 --setenv WAYLAND_DISPLAY "$WAYLAND_DISPLAY" \
 --setenv XDG_RUNTIME_DIR "$SANDBOX_RUNTIME_DIR""
 
+# Bind DNS server and localtime so they work as intended
 BWRAP_NET="--ro-bind /etc/resolv.conf /etc/resolv.conf \
 --ro-bind "$(realpath /etc/localtime)" /etc/localtime"
 
+# Set user related environment variables and PATH
 BWRAP_USER="--setenv USER user --setenv HOME /home/user \
 --setenv XDG_CONFIG_HOME /home/user/.config \
---setenv PATH /usr/bin:/usr/sbin:/bin:/sbin"
+--setenv PATH /usr/bin:/usr/sbin:/bin:/sbin:/home/user/.local/bin:/usr/local/bin"
 
 #### CONTAINER ACTIONS ##################################
 

@@ -1,1 +1,1 @@
-BWRAP_EXTRA="--bind /mnt/secure/data/personal/configs/laptop/home/user/.config/nvim /home/user/.config/nvim --bind /mnt /mnt --bind /mnt/secure/data/personal /home/user/personal" /mnt/secure/sandbox/sandbox.sh exec alpine dev nvim "$@"
+BWRAP_EXTRA="--bind /mnt/secure/data/personal/configs/laptop/home/user/.config/nvim /home/user/.config/nvim --bind /mnt /mnt --bind /mnt/secure/data/personal /home/user/personal --setenv VAULT /mnt/secure/data/personal/wallet/vault.sdb" /mnt/secure/sandbox/sandbox.sh exec alpine dev nvim "$@"

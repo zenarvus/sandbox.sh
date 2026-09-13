@@ -1,1 +1,3 @@
+#!/bin/sh
+
 BWRAP_EXTRA="--tmpfs /mnt --bind /mnt/secure/data /mnt/secure/data" /mnt/secure/sandbox/sandbox.sh exec alpine sync syncthing "$@"

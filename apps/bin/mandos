@@ -1,1 +1,3 @@
+#!/bin/sh
+
 BWRAP_EXTRA="--bind /mnt /mnt --bind /mnt/secure/data/personal /home/user/personal --setenv MD_FOLDER /home/user/personal/second-brain --setenv SOLO_TEMPLATES api/rss.xml,api/nodes.json,api/search.json,api/comment-guestbook --setenv ONLY_PUBLIC no --setenv CONTENT_SEARCH true" /mnt/secure/sandbox/sandbox.sh exec alpine dev go -C /mnt/secure/data/personal/projects/programming/mandos/ run .

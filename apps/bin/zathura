@@ -1,1 +1,1 @@
-BWRAP_EXTRA="--bind /mnt/secure/data/personal/configs/laptop/home/user/.config/nvim /home/user/.config/nvim --bind /mnt /mnt --bind /mnt/secure/data/personal /home/user/personal" /mnt/secure/sandbox/sandbox.sh exec alpine media zathura "$@"
+BWRAP_EXTRA="--bind /mnt/secure/data/personal/configs/laptop/home/user/.config/zathura /home/user/.config/zathura --bind /mnt /mnt --bind /mnt/secure/data/personal /home/user/personal --bind /mnt/secure/data/personal/second-brain/media /media" /mnt/secure/sandbox/sandbox.sh exec alpine media zathura "$@"
